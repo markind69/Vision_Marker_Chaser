@@ -12,6 +12,7 @@ class Robot:
         self.armor = armor
         self.weapon = weapon
         self.speed = speed
+        # self.V = [V0, V1, V2, V3]
 
     def program(self):
         return (f'My designation is {self.name} and my armor is {self.color}'
@@ -19,11 +20,11 @@ class Robot:
                 f'my {self.weapon}\n at {self.speed} meters per second.')
 
     def mechanum(self, Vd, Vo, T0):
-        V0 = Vd * (sin(radians(T0) + pi / 4) + Vo)
-        V1 = Vd * (cos(radians(T0) + pi / 4) - Vo)
-        V2 = Vd * (cos(radians(T0) + pi / 4) + Vo)
-        V3 = Vd * (sin(radians(T0) + pi / 4) - Vo)
-        return [V0, V1, V2, V3]
+        self.V0 = Vd * (sin(radians(T0) + pi / 4) + Vo)
+        self.V1 = Vd * (cos(radians(T0) + pi / 4) - Vo)
+        self.V2 = Vd * (cos(radians(T0) + pi / 4) + Vo)
+        self.V3 = Vd * (sin(radians(T0) + pi / 4) - Vo)
+        return [self.V0, self.V1, self.V2, self.V3]
 
 
 Robot_1 = Robot('Blast-Star', 'Red', 'Titanium', 'Ion Cannon', 20)
@@ -41,6 +42,7 @@ V = Robot_2.mechanum(5,2,23)
 print(V)
 V = Robot_3.mechanum(7,1,13)
 print(V)
+print(Robot_3)
 # V = mechanum(Vd, Vo, T0)
 # chassis_ctrl.set_wheel_speed(V[0], V[1], V[2], V[3])
 # time.sleep(Tm)
