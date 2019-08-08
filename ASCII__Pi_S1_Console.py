@@ -13,7 +13,7 @@ graph_line = ''
     #     graph_line = ''
     # print("#".center(int(circle_2)))
     # print(circle_2)
-# V = mechanum(Vd, Vo, T0)
+# V = mecanum(Vd, Vo, T0)
 # chassis_ctrl.set_wheel_speed(V[0], V[1], V[2], V[3])
 # time.sleep(Tm)
 

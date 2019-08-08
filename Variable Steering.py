@@ -12,7 +12,7 @@ Vo = 0
 Tm = 0
 
 
-def mechanum(Vd, Vo, T0):
+def mecanum(Vd, Vo, T0):
     V1 = Vd * (sin(radians(T0) + pi / 4) + Vo)
     V2 = Vd * (cos(radians(T0) + pi / 4) - Vo)
     V3 = Vd * (cos(radians(T0) + pi / 4) + Vo)
@@ -20,7 +20,7 @@ def mechanum(Vd, Vo, T0):
     return [V1, V2, V3, V4]
 
 
-V = mechanum(Vd, Vo, T0)
+V = mecanum(Vd, Vo, T0)
 # chassis_ctrl.set_wheel_speed(V[0], V[1], V[2], V[3])
 # time.sleep(Tm)
 
@@ -32,7 +32,7 @@ print(Vd, Vo, T0)
 
 
 '''
-def mechanum(Vd, Vo, T0):
+def mecanum(Vd, Vo, T0):
     V1 = Vd * (sin(radians(T0) + 0.7854) + Vo)
     V2 = Vd * (cos(radians(T0) + 0.7854) - Vo)
     V3 = Vd * (cos(radians(T0) + 0.7854) + Vo)
@@ -54,7 +54,7 @@ print(t.x)
 
 
 
-class Mechanum:
+class mecanum:
     def __init__(self):
         self.V1 = Vd * (sin(radians(T0) + 0.7854) + Vo)
         self.V2 = Vd * (cos(radians(T0) + 0.7854) - Vo)

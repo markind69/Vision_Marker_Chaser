@@ -12,19 +12,18 @@ class Robot:
         self.armor = armor
         self.weapon = weapon
         self.speed = speed
-        # self.V = [V0, V1, V2, V3]
 
     def program(self):
         return (f'My designation is {self.name} and my armor is {self.color}'
                 f' {self.armor} and my Program\n is to destroy all humans with '
                 f'my {self.weapon}\n at {self.speed} meters per second.')
 
-    def mechanum(self, Vd, Vo, T0):
-        self.V0 = Vd * (sin(radians(T0) + pi / 4) + Vo)
-        self.V1 = Vd * (cos(radians(T0) + pi / 4) - Vo)
-        self.V2 = Vd * (cos(radians(T0) + pi / 4) + Vo)
-        self.V3 = Vd * (sin(radians(T0) + pi / 4) - Vo)
-        return [self.V0, self.V1, self.V2, self.V3]
+    def mecanum(self, Vd, Vo, T0):
+        V0 = Vd * (sin(radians(T0) + pi / 4) + Vo)
+        V1 = Vd * (cos(radians(T0) + pi / 4) - Vo)
+        V2 = Vd * (cos(radians(T0) + pi / 4) + Vo)
+        V3 = Vd * (sin(radians(T0) + pi / 4) - Vo)
+        return [V0, V1, V2, V3]
 
 
 Robot_1 = Robot('Blast-Star', 'Red', 'Titanium', 'Ion Cannon', 20)
@@ -38,11 +37,14 @@ print(Robot_2.armor)
 print(Robot_3.name)
 print(Robot_1.weapon)
 
-V = Robot_2.mechanum(5,2,23)
+V = Robot_1.mecanum(5,2,23)
+V = Robot_2.mecanum(6,2,27)
 print(V)
-V = Robot_3.mechanum(7,1,13)
+V = Robot_3.mecanum(7,1,13)
 print(V)
-print(Robot_3)
-# V = mechanum(Vd, Vo, T0)
+print(Robot_2.V0)
+print(Robot_3.V1)
+print(Robot_1.V3)
+# V = mecanum(Vd, Vo, T0)
 # chassis_ctrl.set_wheel_speed(V[0], V[1], V[2], V[3])
 # time.sleep(Tm)
