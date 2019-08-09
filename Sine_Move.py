@@ -1,19 +1,21 @@
 from time import sleep
-from math import sin, cos, radians, pi, fabs, acos, asin
-T0 = 0
-Tm = 0.2
-Vd = 40
-vdmax = 59.9
-sign_changer1 = -1.0
-sign_changer2 = -1.0
-sign_changer3 = 1.0
-start1 = 63
-stop1 = 230
-trfact = 0.4   # Turn Radius Factor
-ltfact = 30    # Lateral Translation Factor
-vdfact = 30     # Speed Factor
-t0max = 60
-voff = 45
+from math import sin, cos, radians, pi, fabs
+
+T0 = 0                # Init Theta Zero (direction of Translation)
+Tm = 0.2              # Init Time Delay
+Vd = 40               # Init Speed in RPM
+vdmax = 59.9          # Set Max wheel RPM for tic toc
+sign_changer1 = -1.0  # Tic toc for Heading
+sign_changer2 = -1.0  # Tic toc for Theta Zero
+sign_changer3 = 1.0   # Tic toc for Speed
+start1 = 63           # Start Counter (treated as degrees)
+stop1 = 230           # Stop Counter (sets total loops to be run)
+trfact = 0.4          # Turn Radius Factor
+ltfact = 30           # Lateral Translation Factor
+vdfact = 30           # Speed Factor
+t0max = 59.9          # Theta Zero tic toc threshold
+voff = 45             # Speed offset in degrees
+
 
 def mecanum(Vd, Vo, T0):
 
