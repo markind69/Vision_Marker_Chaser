@@ -1,6 +1,10 @@
-T0 = 0                # Init Theta Zero (direction of Translation)
+from time import sleep
+from math import sin, cos, radians, pi
+
+Vd = 20               # Init Speed in RPM (100 is pretty fast)
+Vo = 0.7              # Init Turn Factor (-3.0 to + 3.0)
+T0 = 60               # Init Theta Zero (direction of Translation)
 Tm = 0.2              # Init Time Delay
-Vd = 20               # Init Speed in RPM
 start1 = 1            # Start Counter (treated as degrees)
 stop1 = 30            # Stop Counter (sets total loops to be run)
 
