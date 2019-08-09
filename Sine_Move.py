@@ -30,7 +30,7 @@ for n in range(start1, stop1):
     Vo = (trfact * (1 + sin(radians(n * 10)))) * sign_changer1
     T0 = (ltfact * (1 + cos(radians(n * 10)))) * sign_changer2
     Vd = (vdfact * (1 + sin(radians((n+voff) * 10)))) * sign_changer3
-    if fabs(Vo) < .01:
+    if fabs(Vo) < .01:   # Switches left / right turning near center
         sign_changer1 = sign_changer1 * -1.0
         print(sign_changer1)
     if fabs(T0) > t0max:
