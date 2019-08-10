@@ -15,6 +15,8 @@ ltfact = 30           # Lateral Translation Factor
 vdfact = 30           # Speed Factor
 t0max = 59.9          # Theta Zero tic toc threshold
 voff = 45             # Speed offset in degrees
+toff = 33             # Translate (Lateral) offset in degrees
+roff = 66             # Radius of Turn Change Factor offset in degrees
 
 
 def mecanum(Vd, Vo, T0):
@@ -27,8 +29,8 @@ def mecanum(Vd, Vo, T0):
 
 
 for n in range(start1, stop1):
-    Vo = (trfact * (1 + sin(radians(n * 10)))) * sign_changer1
-    T0 = (ltfact * (1 + cos(radians(n * 10)))) * sign_changer2
+    Vo = (trfact * (1 + sin(radians((n+roff) * 10)))) * sign_changer1
+    T0 = (ltfact * (1 + cos(radians((n+toff) * 10)))) * sign_changer2
     Vd = (vdfact * (1 + sin(radians((n+voff) * 10)))) * sign_changer3
     if fabs(Vo) < .01:   # Switches left / right turning near center
         sign_changer1 = sign_changer1 * -1.0
