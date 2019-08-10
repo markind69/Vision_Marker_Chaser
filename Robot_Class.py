@@ -1,5 +1,6 @@
 from math import sin, cos, radians, pi
 
+
 class Robot:
     Vd = 5
     T0 = 0
@@ -41,7 +42,7 @@ V = Robot_1.mecanum(5,2,23)
 V = Robot_2.mecanum(6,2,27)
 print(V)
 V = Robot_3.mecanum(7,1,13)
-print(V)
+print(type(V))
 print(Robot_2.V0)
 print(Robot_3.V1)
 print(Robot_1.V3)

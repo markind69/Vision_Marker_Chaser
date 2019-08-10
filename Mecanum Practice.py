@@ -21,6 +21,7 @@ def mecanum(Vd, Vo, T0):
 for n in range(start1, stop1):
     print(Vd, Vo, T0, n)
     V = mecanum(Vd, Vo, T0)
+    print(type(V))
     # chassis_ctrl.set_wheel_speed(V[0], V[1], V[2], V[3])
     print(V[0], V[1], V[2], V[3])
     sleep(Tm)
