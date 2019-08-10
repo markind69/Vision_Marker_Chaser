@@ -6,6 +6,7 @@ Vo = 0.7      # Init Turn Factor (-3.0 to + 3.0)
 T0 = 90       # Init Theta Zero (direction of Translation in degrees)
 Tm = 5        # Time of movement in seconds
 
+
 def mecanum(Vd, Vo, T0):
 
     V0 = Vd * (sin(radians(T0) + pi / 4) + Vo)
