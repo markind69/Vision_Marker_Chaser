@@ -48,10 +48,10 @@ print(Robot_2.armor)
 print(Robot_3.name)
 print(Robot_1.weapon)
 
-V = Robot_1.mecanum(5,2,23)
-V = Robot_2.mecanum(6,2,27)
+V = Robot_1.mecanum(5, 2, 23)
+V = Robot_2.mecanum(6, 2, 27)
 print(V)
-V = Robot_3.mecanum(7,1,13)
+V = Robot_3.mecanum(7, 1, 13)
 print(type(V))
 print(Robot_2.V4)
 print(Robot_3.V1)
@@ -74,11 +74,13 @@ print(Robot_3.speed)
 print(Robot_2.speed)
 Robot_2.apply_speed_penalty()
 print(Robot_2.speed)
+
 print(Robot_2.speed_penalty)
+
 print(Robot.speed_penalty)
 
 # V = mecanum(Vd, Vo, T0)
 # chassis_ctrl.set_wheel_speed(V[0], V[1], V[2], V[3])
 # chassis_ctrl.set_wheel_speed(V0, V1, V2, V3)
 
-# time.sleep(Tm)
+# time.s
